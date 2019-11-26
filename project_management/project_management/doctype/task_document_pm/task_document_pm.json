@@ -1,0 +1,80 @@
+{
+ "creation": "2019-11-26 14:00:46.741473",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_name",
+  "can_client_view",
+  "document_date",
+  "column_break_4",
+  "submit_attachment",
+  "reviewed_attachment",
+  "status"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Document Name",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "can_client_view",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Can Client View"
+  },
+  {
+   "columns": 2,
+   "default": "Today",
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Document Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "submit_attachment",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Submit Attachment"
+  },
+  {
+   "columns": 2,
+   "fieldname": "reviewed_attachment",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Reviewed Attachment"
+  },
+  {
+   "columns": 1,
+   "default": "Under Review",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Under Review\nApproved\nRejected"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-26 14:30:32.308494",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Task Document PM",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

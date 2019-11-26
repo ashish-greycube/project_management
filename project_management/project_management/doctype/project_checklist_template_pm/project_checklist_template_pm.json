@@ -1,0 +1,74 @@
+{
+ "autoname": "field:template_name",
+ "creation": "2019-11-26 14:11:41.525637",
+ "description": "Template to auto populate Project checklist child table in Project doctype",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "project_checklist_pm"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "project_checklist_pm",
+   "fieldtype": "Table",
+   "label": "Project Checklist PM",
+   "options": "Project Checklist PM",
+   "reqd": 1
+  }
+ ],
+ "modified": "2019-11-26 14:15:42.073591",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Project Checklist Template PM",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1
+  }
+ ],
+ "search_fields": "template_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "template_name",
+ "track_changes": 1
+}

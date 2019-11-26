@@ -1,0 +1,45 @@
+{
+ "creation": "2019-11-26 14:07:27.153313",
+ "description": "Project Checklist to ensure things",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "check_point",
+  "information",
+  "checklist_category"
+ ],
+ "fields": [
+  {
+   "fieldname": "check_point",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Check Point",
+   "reqd": 1
+  },
+  {
+   "fieldname": "information",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Information"
+  },
+  {
+   "fieldname": "checklist_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Checklist Category",
+   "options": "Checklist Category PM"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-11-26 14:58:20.089683",
+ "modified_by": "Administrator",
+ "module": "Project Management",
+ "name": "Project Checklist PM",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
