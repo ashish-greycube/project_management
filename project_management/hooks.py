@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from . import __version__ as app_version
+from frappe import _
 
 app_name = "project_management"
 app_title = "Project Management"
@@ -75,6 +76,11 @@ doctype_js = {"Project" : "public/js/project.js"}
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
 
+has_website_permission = {
+	"Project": "project_management.api.has_website_permission"
+	
+}
+boot_session = "project_management.api.boot_session"
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -120,6 +126,9 @@ doctype_js = {"Project" : "public/js/project.js"}
 # 	"frappe.desk.doctype.event.event.get_events": "project_management.event.get_events"
 # }
 #
+standard_portal_menu_items = [
+	{"title": _("Construction Project Management"), "route": "/project-list", "reference_doctype": "Project"}
+]
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps

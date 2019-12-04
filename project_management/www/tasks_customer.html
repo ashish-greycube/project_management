@@ -1,0 +1,30 @@
+{{task.name}}
+{% for document in task.task_document_pm_cf %}
+<div class="row">
+{{document.document_name}}
+</div>
+{% endfor %}
+<div class="attachments">
+		<h5>{{ _("Attachments") }}</h5>
+		{% for attachment in attachments %}
+		<div class="attachment">
+			<a class="no-underline attachment-link" href="{{ attachment.file_url }}" target="blank">
+				<div class="row">
+					<div class="col-9">
+						<span class="file-name">{{ attachment.file_name }}</span>
+					</div>
+					<div class="col-3">
+						<span class="pull-right file-size">{{ attachment.file_size }}</span>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+	 {# attachments #}
+
+	<div class="comments">
+		<h3>{{ _("Comments") }}</h3>
+		{% include 'templates/includes/comments/comments.html' %}
+	</div>
+ {# comments #}
