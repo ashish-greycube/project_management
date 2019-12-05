@@ -3,9 +3,26 @@ import frappe
 from frappe import _
 
 
+def update_task_document(self,method):
+	from frappe.utils import flt, has_common
+	import json
+	user=frappe.local.session_obj.user
+	roles=frappe.get_roles(user)
+	if has_common(["Supplier"], roles):
+		for d in self.get("task_document_pm_cf"):
+			if d.is_new():
+				d.status='Under Review'
+				d.can_client_view=0
+			else:
+				d.submit_attachment=d.submit_attachment
+			print(d.name,d.is_new())
+		# print(json.dumps(self.task_document_pm_cf),method,'----------------------------------------------------')
+
 @frappe.whitelist()
 def boot_session(bootinfo):
 	print('===============================')
+	# frappe.local.cookie_manager.set_cookie("is_supplier", 'False')
+	# frappe.local.cookie_manager.set_cookie("is_customer", 'False')
 	"""Returns true if there is a related lead or contact related to this document"""
 	# user=frappe.local.session_obj.user
 	# roles=frappe.get_roles(user)

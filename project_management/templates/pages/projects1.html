@@ -21,10 +21,13 @@
 	</div>
 </div>
 {% endif %}
-project_unit_number_cf : {{doc.project_unit_number_cf}}
+<h5 >Project Unit Number : {{doc.project_unit_number_cf}} </h5>
+<br>
 <div class="clearfix">
   <h4 style="float: left;">{{ _("Tasks") }}</h4>
+  {% if is_supplier == True %}
   <a class="btn btn-secondary btn-light btn-sm" style="float: right; position: relative; top: 10px;" href='/tasks?new=1&project={{ doc.project_name }}'>{{ _("New task") }}</a>
+  {% endif %}
 </div>
 
 <p>

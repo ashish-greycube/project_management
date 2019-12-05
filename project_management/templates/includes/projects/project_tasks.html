@@ -4,9 +4,9 @@
 			{% if is_supplier == True %}
 			<a class="no-decoration task-link {{ task.css_seen }}" href="/tasks?name={{ task.name }}">
 				{% elif is_customer == True %}
-				<a class="no-decoration task-link {{ task.css_seen }}" href="/tasks_customer?name={{ task.name }}">
+				<a class="no-decoration task-link {{ task.css_seen }}" href="/customer-task?name={{ task.name }}">
 					{% else %}
-					<a class="no-decoration task-link {{ task.css_seen }}" href="/tasks?name={{ task.name }}"></a>
+					<a class="no-decoration task-link {{ task.css_seen }}" href="/tasks?name={{ task.name }}">
 					{% endif %}
 		<div class='row project-item'>
 			<div class='col-xs-9'>

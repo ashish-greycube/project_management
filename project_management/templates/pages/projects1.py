@@ -7,7 +7,6 @@ import json
 from frappe.utils import flt, has_common,cstr
 
 def get_context(context):
-	print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 	project_user = frappe.db.get_value("Project User", {"parent": frappe.form_dict.project, "user": frappe.session.user} , ["user", "view_attachments"], as_dict= True)
 	if frappe.session.user != 'Administrator' and (not project_user or frappe.session.user == 'Guest'):
 		raise frappe.PermissionError
@@ -42,9 +41,13 @@ def get_context(context):
 def get_tasks(project, start=0, search=None, item_status=None):
 	from project_management.api import get_customers_suppliers
 	customers, suppliers = get_customers_suppliers('Task', frappe.session.user,'supplier_cf')
-	if suppliers:
+	user=frappe.session.user
+	roles=frappe.get_roles(user)
+	is_supplier=False
+	if has_common(["Supplier"], roles):
+		is_supplier=True
+	if suppliers and is_supplier==True:
 		filters = {"project": project,"supplier_cf":suppliers[0]}
-		
 	else:
 		filters = {"project": project}
 	if search:
@@ -54,7 +57,6 @@ def get_tasks(project, start=0, search=None, item_status=None):
 	tasks = frappe.get_all("Task", filters=filters,
 		fields=["name", "subject", "status", "_seen", "_comments", "modified", "description","supplier_cf"],
 		limit_start=start, limit_page_length=10)
-	print(tasks,'------------------')
 	for task in tasks:
 		task.todo = frappe.get_all('ToDo',filters={'reference_name':task.name, 'reference_type':'Task'},
 		fields=["assigned_by", "owner", "modified", "modified_by"])

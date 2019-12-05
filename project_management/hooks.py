@@ -77,7 +77,8 @@ doctype_js = {"Project" : "public/js/project.js"}
 # }
 
 has_website_permission = {
-	"Project": "project_management.api.has_website_permission"
+	"Project": "project_management.api.has_website_permission",
+	"Task": "project_management.api.has_website_permission"
 	
 }
 boot_session = "project_management.api.boot_session"
@@ -85,13 +86,11 @@ boot_session = "project_management.api.boot_session"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Task": {
+		"validate": "project_management.api.update_task_document",
+	}
+}
 
 # Scheduled Tasks
 # ---------------
