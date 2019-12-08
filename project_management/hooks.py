@@ -21,13 +21,15 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/project_management/css/project_management.css"
-# web_include_js = "/assets/project_management/js/project_management.js"
+web_include_js = ["/assets/project_management/js/ag-grid-community.min.js",
+                  "/assets/project_management/js/task_pm.js"]
+
 
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Project" : "public/js/project.js"}
+doctype_js = {"Project": "public/js/project.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -77,8 +79,8 @@ doctype_js = {"Project" : "public/js/project.js"}
 # }
 
 has_website_permission = {
-	"Project": "project_management.api.has_website_permission"
-	
+    "Project": "project_management.api.has_website_permission"
+
 }
 boot_session = "project_management.api.boot_session"
 # Document Events
@@ -127,7 +129,8 @@ boot_session = "project_management.api.boot_session"
 # }
 #
 standard_portal_menu_items = [
-	{"title": _("Construction Project Management"), "route": "/project-list", "reference_doctype": "Project"}
+    {"title": _("Construction Project Management"),
+     "route": "/project-list", "reference_doctype": "Project"}
 ]
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -135,4 +138,3 @@ standard_portal_menu_items = [
 # override_doctype_dashboards = {
 # 	"Task": "project_management.task.get_dashboard_data"
 # }
-
