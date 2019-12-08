@@ -9,7 +9,7 @@
  "amount": 0.0,
  "amount_based_on_field": 0,
  "breadcrumbs": "[{\"title\":\"Tasks\", \"name\":\"tasks\"}]",
- "client_script": "",
+ "client_script": "setup_task_pm();",
  "creation": "2016-06-24 15:50:33.091287",
  "doc_type": "Task",
  "docstatus": 0,
@@ -19,7 +19,11 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
+<<<<<<< HEAD
  "modified": "2019-12-05 09:23:50.805760",
+=======
+ "modified": "2019-12-08 08:48:45.028607",
+>>>>>>> c177122e8ff58b146b923448d1042a02ea78b118
  "modified_by": "Administrator",
  "module": "Project Management",
  "name": "tasks",
@@ -124,13 +128,36 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "fieldname": "",
+   "fieldtype": "Section Break",
+   "hidden": 0,
+   "max_length": 0,
+   "max_value": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
    "fieldname": "task_document_pm_cf",
    "fieldtype": "Table",
-   "hidden": 0,
+   "hidden": 1,
    "label": "Task Documents",
    "max_length": 0,
    "max_value": 0,
    "options": "Task Document PM",
+   "read_only": 1,
+   "reqd": 0,
+   "show_in_filter": 0
+  },
+  {
+   "allow_read_on_all_link_options": 0,
+   "fieldname": "task_html",
+   "fieldtype": "HTML",
+   "hidden": 0,
+   "label": "Task HTML",
+   "max_length": 0,
+   "max_value": 0,
    "read_only": 0,
    "reqd": 0,
    "show_in_filter": 0
