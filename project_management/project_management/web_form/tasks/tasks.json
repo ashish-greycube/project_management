@@ -19,11 +19,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
-<<<<<<< HEAD
- "modified": "2019-12-05 09:23:50.805760",
-=======
- "modified": "2019-12-08 08:48:45.028607",
->>>>>>> c177122e8ff58b146b923448d1042a02ea78b118
+ "modified": "2019-12-08 09:36:14.075560",
  "modified_by": "Administrator",
  "module": "Project Management",
  "name": "tasks",
@@ -79,10 +75,9 @@
   },
   {
    "allow_read_on_all_link_options": 0,
-   "fieldname": "description",
-   "fieldtype": "Text Editor",
+   "fieldname": "",
+   "fieldtype": "Column Break",
    "hidden": 0,
-   "label": "Details",
    "max_length": 0,
    "max_value": 0,
    "read_only": 0,

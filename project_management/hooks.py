@@ -79,14 +79,9 @@ doctype_js = {"Project": "public/js/project.js"}
 # }
 
 has_website_permission = {
-<<<<<<< HEAD
 	"Project": "project_management.api.has_website_permission",
 	"Task": "project_management.api.has_website_permission"
 	
-=======
-    "Project": "project_management.api.has_website_permission"
-
->>>>>>> c177122e8ff58b146b923448d1042a02ea78b118
 }
 boot_session = "project_management.api.boot_session"
 # Document Events
